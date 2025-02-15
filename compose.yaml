@@ -1,9 +1,9 @@
-version: '3.9'
-
 services:
   demineur:
     image: tangramor/nginx-php8-fpm:php8.4.3_withoutNodejs
     restart: always
+    env_file:
+      - .env
     volumes:
       - "./src/public:/var/www/html"
     labels:
