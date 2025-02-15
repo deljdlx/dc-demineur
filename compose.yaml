@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  demineur:
+    image: tangramor/nginx-php8-fpm:php8.4.3_withoutNodejs
+    restart: always
+    volumes:
+      - "./src/public:/var/www/html"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.demineur.rule=Host(`demineur.jlb.ninja`)"
+      - "traefik.http.routers.demineur.entrypoints=websecure"
+      - "traefik.http.routers.demineur.tls.certresolver=myresolver"
+    networks:
+      - web
+
+networks:
+  web:
+    name: web  # 🔥 Réseau partagé avec Traefik
