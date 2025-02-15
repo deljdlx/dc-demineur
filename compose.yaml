@@ -16,4 +16,5 @@ services:
 
 networks:
   web:
-    name: web  # 🔥 Réseau partagé avec Traefik
+    name: web
+    external: true
