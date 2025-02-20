@@ -1,0 +1,21 @@
+services:
+  demineur:
+    container_name: demineur
+    image: tangramor/nginx-php8-fpm:php8.4.3_withoutNodejs
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - "./src:/var/www/html"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.demineur.rule=Host(\"${DOMAIN}\")"
+      - "traefik.http.routers.demineur.entrypoints=websecure"
+      - "traefik.http.routers.demineur.tls.certresolver=myresolver"
+    networks:
+      - web
+
+networks:
+  web:
+    name: web
+    external: true
