@@ -1,12 +1,12 @@
 services:
   demineur:
     container_name: demineur
-    image: tangramor/nginx-php8-fpm:php8.4.3_withoutNodejs
+    image: nginx:alpine
     restart: always
     env_file:
       - .env
     volumes:
-      - "../src:/var/www/html"
+      - "./src:/usr/share/nginx/html"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.demineur.rule=Host(\"${DOMAIN}\")"
