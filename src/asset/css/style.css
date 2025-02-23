@@ -19,8 +19,22 @@ h1 {
     padding: 1rem;
     background-color: #333;
     color: #FFF;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
+
+.level-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.level-selector a{
+    border: solid 1px #333;
+    padding: 1rem;
+    color: #fff;
+}
+
 
 #layout {
 
@@ -49,7 +63,7 @@ h1 {
 }
 
 .demineur td {
-    
+
     border-top: solid 1px #FFF;
     border-left: solid 1px #FFF;
     border-right:  solid 1px #888;
@@ -57,11 +71,11 @@ h1 {
 
     background-color:var(--demineur-cell-color);
 
-    height: 32px;
-    width: 32px;
+    height: calc((100vh - 400px) / 20);
+    width: calc((100vh - 400px) / 20);
 
     text-align: center;
-    font-size: 24px;
+    font-size: calc((100vh - 400px) / 20 - 10px);
 
 }
 
@@ -77,7 +91,6 @@ h1 {
     font-weight: 900;
     font-size: 24px;
     display: block;
-    margin-left: 
 }
 
 
@@ -90,11 +103,6 @@ h1 {
 
     background-color:#EEE;
 
-    height: 32px;
-    width: 32px;
-
-    text-align: center;
-    font-size: 24px;
 }
 
 .demineur td.fail {
@@ -106,18 +114,14 @@ h1 {
     font-family:"Font Awesome 5 Free";
     content: "\f024";
     font-weight: 900;
-    font-size: 24px;
     display: block;
-    margin-left: 
 }
 
 .demineur td.reserved:before {
     font-family:"Font Awesome 5 Free";
     content: "\f128";
     font-weight: 900;
-    font-size: 24px;
     display: block;
-    margin-left: 
 }
 
 

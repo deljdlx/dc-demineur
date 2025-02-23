@@ -9,17 +9,49 @@
 </head>
 <body>
 
-    <h1>JS Démineur</h1>
+    <h1>
+        JS Démineur
+
+        <div class="level-selector">
+            <a href="/?level=noob">Noob</a>
+            <a href="/?level=player">Player</a>
+            <a href="/?level=expert">Expert</a>
+            <a href="/?level=mvp">MVP</a>
+        </div>
+    </h1>
 
     <div id="layout">
         <div class="game-container"></div>
+
     </div>
 
 
 
     <script src="asset/js/Demineur.js"></script>
     <script>
-        const demineur = new Demineur();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const level = urlParams.get('level');
+
+        let emineur = null;
+        switch (level) {
+            case 'noob':
+                demineur = new Demineur(8, 8, 9);
+                break;
+            case 'player':
+                demineur = new Demineur(16, 12, 30);
+                break;
+            case 'expert':
+                demineur = new Demineur(16, 16, 60);
+                break;
+            case 'mvp':
+            demineur = new Demineur(22, 16, 80);
+                break;
+            default:
+                demineur = new Demineur(8, 8, 9);
+        }
+
+
         demineur.generateMatrix();
         demineur.render(
             document.querySelector('.game-container')
