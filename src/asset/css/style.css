@@ -2,6 +2,38 @@
     --demineur-background-color: #E4E6E8;
     --demineur-cell-color: #DBDBDB;
 }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #aaa;
+    margin: 0;
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    background-color: #333;
+    color: #FFF;
+    margin-bottom: 100px;
+}
+
+#layout {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
 .demineur {
     display: inline-block;
     width: auto;
